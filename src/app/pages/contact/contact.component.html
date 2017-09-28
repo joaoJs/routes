@@ -1,0 +1,22 @@
+<h2> Contact Us </h2>
+
+
+
+<p>
+  Have a question?
+  Call 1-800-0IM-POOR.
+</p>
+
+<form (ngSubmit)="submitMessage()">
+  <label for="email"> Email</label>
+  <input  id="email" type="email" placeholder="atre@gmail.com"
+    name="email" [(ngModel)]="message.email">
+  <br>
+
+  <label   for="text"> Message </label>
+  <textarea id="text" name="text" placeholder="I have lots of gold to sell"
+    [(ngModel)]="message.text"></textarea>
+  <br>
+
+  <button> Send Message </button>
+</form>
