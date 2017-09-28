@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-chuck-norris',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChuckNorrisComponent implements OnInit {
 
-  constructor() { }
+  randomJoke: string = "";
+
+  constructor(
+    private httpThang: HttpClient
+  ) { }
 
   ngOnInit() {
+    this.httpThang.get('https://api.icndb.com/jokes/random')
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+          this.randomJoke = data.value.joke;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 
 }
