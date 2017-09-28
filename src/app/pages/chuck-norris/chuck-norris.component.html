@@ -1,3 +1,14 @@
 <h2> Random Joke </h2>
 
-<p> {{randomJoke}}</p>
+<p> {{randomJoke.joke}}</p>
+
+<div *ngIf="randomJoke.categories && randomJoke.categories.length > 0">
+  <h4> Categories </h4>
+
+  <ul *ngFor="let category of randomJoke.categories">
+    <li>{{ category }}</li>
+  </ul>
+
+</div>
+
+<button (click)="getRandomJoke()"> Get Random Joke </button>

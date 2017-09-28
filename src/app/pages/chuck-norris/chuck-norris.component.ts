@@ -8,18 +8,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ChuckNorrisComponent implements OnInit {
 
-  randomJoke: string = "";
+  randomJoke: any = {};
 
   constructor(
     private httpThang: HttpClient
   ) { }
 
   ngOnInit() {
+    this.getRandomJoke();
+  }
+
+
+  getRandomJoke() {
     this.httpThang.get('https://api.icndb.com/jokes/random')
       .subscribe(
         (data: any) => {
           console.log(data);
-          this.randomJoke = data.value.joke;
+          this.randomJoke = data.value;
         },
         (err) => {
           console.log(err);
