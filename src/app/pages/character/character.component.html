@@ -1,0 +1,31 @@
+<h2> Characters </h2>
+
+<h3> new character </h3>
+
+<form (ngSubmit)="submitCharacter()">
+  <label for="name"> Name </label>
+  <input  id="name" type="text" placeholder="Izzy"
+    name="name" [(ngModel)]="newCharacter.name">
+    <br>
+
+  <label for="occ"> Occupation </label>
+  <input  id="occ" type="text" placeholder="Driver"
+      name="occupation" [(ngModel)]="newCharacter.occupation">
+      <br>
+
+  <label for="weapon"> Weapon </label>
+  <input  id="weapon" type="text" placeholder="Gun"
+          name="weapon" [(ngModel)]="newCharacter.weapon">
+  <br>
+
+  <button> Submit </button>
+</form>
+
+
+<ul>
+  <li *ngFor="let character of characters">
+    <h3> {{character.name }}</h3>
+    <p> Occupation: {{character.occupation}}</p>
+    <p> Weapon: {{character.weapon}}</p>
+  </li>
+</ul>

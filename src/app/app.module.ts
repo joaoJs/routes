@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PartnerService } from './services/partner.service';
+import { CharacterApiService } from './services/character-api.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { PartnerListComponent } from './pages/partner-list/partner-list.component';
 import { PartnerDetailsComponent } from './pages/partner-details/partner-details.component';
 import { ChuckNorrisComponent } from './pages/chuck-norris/chuck-norris.component';
+import { CharacterComponent } from './pages/character/character.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ChuckNorrisComponent } from './pages/chuck-norris/chuck-norris.componen
     ContactComponent,
     PartnerListComponent,
     PartnerDetailsComponent,
-    ChuckNorrisComponent
+    ChuckNorrisComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { ChuckNorrisComponent } from './pages/chuck-norris/chuck-norris.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [PartnerService],
+  providers: [PartnerService, CharacterApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

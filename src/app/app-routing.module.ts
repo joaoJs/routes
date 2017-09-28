@@ -6,6 +6,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { PartnerListComponent } from './pages/partner-list/partner-list.component';
 import { PartnerDetailsComponent } from './pages/partner-details/partner-details.component';
 import { ChuckNorrisComponent } from './pages/chuck-norris/chuck-norris.component';
+import { CharacterComponent } from './pages/character/character.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactComponent },
   { path: 'partners', component: PartnerListComponent },
   { path: 'partners/:thePartnerId', component: PartnerDetailsComponent },
-  { path: 'chuck', component: ChuckNorrisComponent}
+  { path: 'chuck', component: ChuckNorrisComponent},
+  { path: 'characters', component: CharacterComponent }
 ];
 
 @NgModule({
